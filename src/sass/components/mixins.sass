@@ -1,0 +1,44 @@
+=btn ($fixed: true, $empty: false)
+
+    @if $fixed != true
+        font-size: 12px
+        letter-spacing: 1px
+        text-transform: uppercase
+        color: #ffffff
+        font-weight: 700
+        text-align: center
+        text-decoration: none
+        padding: 17.5px 29.5px //empty button
+        border-radius: 25px
+        border: 1px solid #ffffff
+        transition: 1s all ease
+        &:hover
+            background-color: #fff
+            color: #000
+    @else 
+        font-size: 12px
+        letter-spacing: 1px
+        text-transform: uppercase
+        color: #ffffff
+        font-weight: 700
+        text-align: center
+        text-decoration: none
+        padding: 17.5px 29.5px //empty button
+        border-radius: 25px
+        background-color: #6e45e2
+        border: 1px solid #d7dbe8
+        transition: 1s all ease
+        &:hover
+            background-color: #fff
+            color: #000
+    
+    @if $empty != false
+        background-color: #fff
+
+=media ($size)
+    @media screen and (min-width: #{$size}px)
+        @content
+
+=gradientBG ($url)
+    background-color: #87d3cd
+    background: linear-gradient(-60deg, rgba(135, 211, 205, 0.9) 0%, rgba(109, 69, 225, 0.9) 100%), url(#{$url}) center / cover

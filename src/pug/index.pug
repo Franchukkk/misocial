@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="../css/styles.css")
+    body 
+        include components/mixins       
+        header 
+            .wrapper 
+                +menu(mainMenu)
+                h1.shortDesc SOCIAL MARKETING & ANALYTICS
+                h2 Pricing Table
+                .descript 
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                a.plans-a(href="#plans")
+                    .slide
+        main 
+            .plans#plans 
+                .wrapper 
+                    h2.shortDesc MIsocial
+                    h3.title Select a Plan
+                    .descript
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                    +cards(cards)
+            .bannerStart 
+                .wrapper
+                    h3.shortDesc SOCIAL MARKETING & ANALYTICS
+                    h2.title Take control of your data
+                    .buttons
+                        ul.dark
+                            li
+                                a.buttonStart(href="#") GET STARTED
+                        ul.light
+                            li
+                                a.buttonStart(href="#") explore features
+        footer 
+            .wrapper
+                .footerNav 
+                    +menu(mainMenu, "dark")
+                .copy
+                    .copyright 
+                        p &copy  2017 Mass Impressions & Tranmautritam. Make the right impression.
+                    .sociality 
+                        ul 
+                            li 
+                                a.fb(href="#")
+                            li 
+                                a.tw(href="#")
+                            li
+                                a.goog(href="#")
+                            li
+                                a.inst(href="#")

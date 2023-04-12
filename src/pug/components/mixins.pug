@@ -1,0 +1,47 @@
+- 
+    let mainMenu = [
+        ["Home", "#"],
+        ["Why MISOCIAL", "#"],
+        ["Features", "#"],
+        ["Articles", "#"],
+        ["Pricing", "#"],
+    ]
+-
+    let cards = [
+        ["PERSONAL", "0", "Lorem ipsum dolor sit amet.sed do eiusmod tempor incididunt ut.Labore et dolore magna aliqua.quis nostrud exercitation ullamco laboris.Ea commodo consequat.", "../img/asset3.png"],
+        ["PERSONAL", "29", "Lorem ipsum dolor sit amet.sed do eiusmod tempor incididunt ut.Labore et dolore magna aliqua.quis nostrud exercitation ullamco laboris.Ea commodo consequat.", "../img/asset2.png"],
+        ["PERSONAL", "49", "Lorem ipsum dolor sit amet.sed do eiusmod tempor incididunt ut.Labore et dolore magna aliqua.quis nostrud exercitation ullamco laboris.Ea commodo consequat.", "../img/asset1.png"],
+    ] 
+
+mixin menu(menu, colorTheme="light")
+    .navigation
+        a(href="")
+            .logo
+                img(src="img/logo.png", alt="")
+                p(class=colorTheme) Misocial
+        nav
+            ul.menu(class=colorTheme)
+                for item in menu 
+                    li 
+                        a(href=item[1]) #{item[0]}
+                li
+                    a.buttonStart(href="#") GET STARTED
+
+mixin cards(cards)
+    .figures
+        for item in cards 
+            figure 
+                figcaption
+                    img(src=item[3], alt="asset")
+                    h4.shortDesc #{item[0]}
+                    span
+                        b #{item[1]}
+                        | /month
+                    .descriptionFigure
+                        p #{item[2]}
+                    .buttons
+                        ul.light
+                            li
+                                a.buttonStart(href="#") explore features
+
+

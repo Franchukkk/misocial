@@ -1,0 +1,303 @@
+@import components/mixins
+*
+    margin: 0px
+    padding: 0px
+    font-family: "Maven Pro"
+html,
+body
+    scroll-behavior: smooth
+a
+    text-decoration: none
+li
+    list-style: none
+.wrapper 
+    width: 92%
+    max-width: 1820px
+    margin: auto
+// header 
+.navigation
+    flex-wrap: wrap
+    display: flex
+    justify-content: space-between
+    column-gap: 30px
+    align-items: center
+
+.logo 
+    align-items: center
+    img
+        width: 48px
+        height: 48px
+        margin-right: 17px
+    p 
+        text-transform: uppercase
+        font-size: 30px
+        letter-spacing: 6px
+        font-weight: 700
+
+header
+    margin-bottom: 120px
+    position: relative
+    padding-top: 45px
+    min-height: 770px
+    background-color: #8479e1
+    +gradientBG("../img/header.jpg")
+    .navigation
+        margin-bottom: 180px
+    .logo
+        display: flex
+        p
+            color: #ffffff
+    h2
+        font-size: 86px
+        letter-spacing: -3px
+        line-height: 80px
+        color: #ffffff
+        font-weight: 500
+        text-align: center
+        margin-bottom: 22px
+.descript
+    p
+        font-size: 16px
+        line-height: 28px
+        color: #ffffff
+        font-weight: 400
+        text-align: center
+ul.menu
+    display: flex
+    column-gap: 60px
+    flex-wrap: wrap
+    row-gap: 30px
+    li
+        list-style: none 
+        a:not(.buttonStart)
+            text-decoration: none
+            font-size: 16px
+            line-height: 19px
+            font-weight: 500
+
+ul.light li a:not(.buttonStart)
+    position: relative
+    color: #fff
+    &:before
+        content: ''
+        position: absolute
+        bottom: -13px
+        width: 0px
+        height: 2px
+        background-color: #fff
+        transition: 1s
+    &:hover:before
+        width: 100%
+ul.dark li a:not(.buttonStart)
+    color: #6a6a77
+    transition: 0.5s
+    &:hover
+        color: #756edc
+ul.light a.buttonStart
+    +btn(false)
+ul.dark a.buttonStart
+    +btn(true)
+.shortDesc
+    font-size: 14px
+    letter-spacing: 1px
+    line-height: 32px
+    text-transform: uppercase
+    color: #ffffff
+    font-weight: 700
+    text-align: center
+    position: relative
+    &:before, &:after
+        content: ''
+        position: absolute
+        width: 24px
+        height: 1px
+        background-color: #ffffff
+        top: 50%
+    &:before
+        margin-left: -40px
+    &:after
+        margin-left: 15px
+
+.descript
+    max-width: 387px
+    margin: auto
+
+.slide
+    position: absolute
+    width: 64px
+    height: 64px
+    border-radius: 32px
+    box-shadow: 0 0 10.5px rgba(204,204,223,0.5)
+    background-color: #ffffff
+    left: 50%
+    transform: translate(-50%, 0%)
+    bottom: 50px
+    transition: 1s
+    &:before
+        content: ''
+        position: absolute
+        width: 14px
+        height: 16px
+        background-image: url(../img/arrow.png)
+        top: 25%
+        left: 50%
+        transform: translate(-50%, 50%)
+    &:hover
+        transform: translate(-50%, -10%)
+        box-shadow: 0 0 20.5px #fff
+//main
+.plans
+    padding: 0px 0 120px
+    .shortDesc
+        color: #9fa4af
+        &:before, &:after
+            background-color: #6e45e2
+    h4.shortDesc:after, h4.shortDesc:before
+        display: none
+    .descript
+        margin-bottom: 100px
+        p
+            color: #9fa4af
+    h3.title 
+        margin-bottom: 15px
+.figures
+    display: flex
+    justify-content: space-between
+    column-gap: 25px
+    flex-wrap: wrap
+    max-width: 1420px
+    margin: auto
+    width: 92%
+    text-align: center
+    figure
+        padding: 60px 69px 72px 69px
+        border-radius: 30px
+        background-color: #ffffff
+        border: 1px solid #d7dbe8
+        transition: 0.5s
+        &:hover
+            border: 1px solid transparent
+            filter: drop-shadow(0 0 46px rgba(204,204,223,0.71))
+        h4
+            margin-bottom: 11px
+        a.buttonStart
+            color: #c2c9db
+            box-shadow: inset 0px 1px 0px #e8ebf1
+            box-shadow: inset 0px -1px 0px #e8ebf1
+            border: 1px solid #d7dbe8
+            &:hover
+                color: #fff
+                border: 1px solid transpart
+                background-color: #6e45e2
+        b
+            font-size: 60px
+            letter-spacing: -2px
+            line-height: 72px
+            color: #4f4f6f
+            font-weight: 500
+            position: relative
+            &:before
+                content: '$'
+                font-size: 15px
+                position: absolute
+                top: -15px
+                left: -7px
+        span
+            font-size: 15px
+            letter-spacing: -1px
+            color: #4f4f6f
+            font-weight: 500
+        img
+            margin-bottom: 50px
+.descriptionFigure
+    max-width: 300px
+    margin-top: 20px
+    margin-bottom: 35px
+    p
+        font-size: 16px
+        line-height: 28px
+        color: #9fa4af
+        font-weight: 400
+.title
+    font-size: 60px
+    letter-spacing: -2px
+    line-height: 72px
+    color: #4f4f6f
+    font-weight: 500
+    text-align: center
+.bannerStart 
+    padding-top: 180px
+    padding-bottom: 205px
+    +gradientBG("../img/Map.jpg")
+    background-size: 101%
+    .shortDesc:before,.shortDesc:after
+        display: none
+    .title
+        color: #fff
+    ul a.buttonStart
+        padding: 16.5px 50px
+        border: none
+        background-color: #fff
+        color: #c2c9db
+        &:hover
+            background-color: #6e45e2
+            color: #fff
+    ul.light a.buttonStart
+        padding: 16.5px 28px
+.buttons
+    padding-top: 28px
+    display: flex
+    justify-content: center
+    column-gap: 10px
+    margin: auto
+    flex-wrap: wrap
+
+//footer
+footer
+    padding-top: 50px
+    .logo
+        display: flex
+        p
+            color: #000
+.footerNav 
+    padding-bottom: 30px
+    border-bottom: 2px solid rgba(189, 189, 194, .2)
+.copy
+    display: flex
+    justify-content: space-between
+    padding-top: 33px
+    padding-bottom: 26px
+    p
+        opacity: 0.502
+        font-size: 14px
+        line-height: 19px
+        color: #6a6a77
+        font-weight: 500
+.sociality
+    ul
+        display: flex
+        column-gap: 10px
+.sociality li a
+    opacity: 0.35
+    display: block
+    width: 20px
+    height: 20px
+    transition: 0.5s
+    &:hover
+        opacity: 1
+        transform: scale(1.2)
+    &.fb
+        background-image: url("../img/facebook.svg")
+        background-repeat: no-repeat
+    &.tw
+        background-image: url("../img/twitter.svg")
+        background-repeat: no-repeat
+    &.goog
+        width: 26px
+        background-image: url("../img/google-plus-g.svg")
+        background-repeat: no-repeat
+        background-size: 26px
+    &.inst
+        background-image: url("../img/instagram.svg")
+        background-repeat: no-repeat
+    
