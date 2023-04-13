@@ -1,8 +1,12 @@
 @import components/mixins
 *
-    margin: 0px
-    padding: 0px
+    margin: 0rem
+    padding: 0rem
     font-family: "Maven Pro"
+html
+    font-size: 0.8px
+    +media(1610)
+        font-size: 1px
 html,
 body
     scroll-behavior: smooth
@@ -12,67 +16,80 @@ li
     list-style: none
 .wrapper 
     width: 92%
-    max-width: 1820px
+    max-width: 1820rem
     margin: auto
 // header 
 .navigation
     flex-wrap: wrap
+    row-gap: 20rem
     display: flex
-    justify-content: space-between
-    column-gap: 30px
+    justify-content: center
+    column-gap: 30rem
     align-items: center
+    +media(660)
+        justify-content: space-between
 
 .logo 
     align-items: center
     img
-        width: 48px
-        height: 48px
-        margin-right: 17px
+        width: 48rem
+        height: 48rem
+        margin-right: 17rem
     p 
+        display: block
         text-transform: uppercase
-        font-size: 30px
-        letter-spacing: 6px
+        font-size: 30rem
+        letter-spacing: 6rem
         font-weight: 700
+        +media(660)
+            display: none
+        +media(956)
+            display: block
 
 header
-    margin-bottom: 120px
+    margin-bottom: 120rem
     position: relative
-    padding-top: 45px
-    min-height: 770px
+    padding-top: 45rem
+    min-height: 770rem
     background-color: #8479e1
     +gradientBG("../img/header.jpg")
     .navigation
-        margin-bottom: 180px
+        margin-bottom: 120rem
+        +media(390)
+            margin-bottom: 180rem
     .logo
         display: flex
         p
             color: #ffffff
     h2
-        font-size: 86px
-        letter-spacing: -3px
-        line-height: 80px
+        font-size: 86rem
+        letter-spacing: -3rem
+        line-height: 80rem
         color: #ffffff
         font-weight: 500
         text-align: center
-        margin-bottom: 22px
+        margin-bottom: 22rem
 .descript
     p
-        font-size: 16px
-        line-height: 28px
+        font-size: 16rem
+        line-height: 28rem
         color: #ffffff
         font-weight: 400
         text-align: center
 ul.menu
     display: flex
-    column-gap: 60px
+    justify-content: center
+    column-gap: 30rem
     flex-wrap: wrap
-    row-gap: 30px
+    row-gap: 35rem
+    +media(790)
+        column-gap: 60rem
     li
         list-style: none 
         a:not(.buttonStart)
             text-decoration: none
-            font-size: 16px
-            line-height: 19px
+            font-size: 16rem
+            line-height: 19rem
             font-weight: 500
 
 ul.light li a:not(.buttonStart)
@@ -81,9 +98,9 @@ ul.light li a:not(.buttonStart)
     &:before
         content: ''
         position: absolute
-        bottom: -13px
-        width: 0px
-        height: 2px
+        bottom: -13rem
+        width: 0rem
+        height: 2rem
         background-color: #fff
         transition: 1s
     &:hover:before
@@ -98,9 +115,9 @@ ul.light a.buttonStart
 ul.dark a.buttonStart
     +btn(true)
 .shortDesc
-    font-size: 14px
-    letter-spacing: 1px
-    line-height: 32px
+    font-size: 14rem
+    letter-spacing: 1rem
+    line-height: 32rem
     text-transform: uppercase
     color: #ffffff
     font-weight: 700
@@ -109,45 +126,47 @@ ul.dark a.buttonStart
     &:before, &:after
         content: ''
         position: absolute
-        width: 24px
-        height: 1px
+        width: 24rem
+        height: 1rem
         background-color: #ffffff
         top: 50%
     &:before
-        margin-left: -40px
+        margin-left: -40rem
     &:after
-        margin-left: 15px
+        margin-left: 15rem
 
 .descript
-    max-width: 387px
+    max-width: 387rem
     margin: auto
 
 .slide
     position: absolute
-    width: 64px
-    height: 64px
-    border-radius: 32px
-    box-shadow: 0 0 10.5px rgba(204,204,223,0.5)
+    width: 64rem
+    height: 64rem
+    border-radius: 32rem
+    box-shadow: 0 0 10.5rem rgba(204,204,223,0.5)
     background-color: #ffffff
     left: 50%
     transform: translate(-50%, 0%)
-    bottom: 50px
+    bottom: 50rem
     transition: 1s
     &:before
         content: ''
         position: absolute
-        width: 14px
-        height: 16px
-        background-image: url(../img/arrow.png)
+        width: 14rem
+        height: 16rem
+        background-image: url(../img/arrow.svg)
+        background-repeat: no-repeat
         top: 25%
-        left: 50%
+        left: 52%
         transform: translate(-50%, 50%)
+        opacity: 0.4
     &:hover
         transform: translate(-50%, -10%)
-        box-shadow: 0 0 20.5px #fff
+        box-shadow: 0 0 20.5rem #fff
 //main
 .plans
-    padding: 0px 0 120px
+    padding: 0rem 0 120rem
     .shortDesc
         color: #9fa4af
         &:before, &:after
@@ -155,79 +174,87 @@ ul.dark a.buttonStart
     h4.shortDesc:after, h4.shortDesc:before
         display: none
     .descript
-        margin-bottom: 100px
+        margin-bottom: 100rem
         p
             color: #9fa4af
     h3.title 
-        margin-bottom: 15px
+        margin-bottom: 15rem
 .figures
     display: flex
-    justify-content: space-between
-    column-gap: 25px
+    justify-content: center
+    column-gap: 10%
+    row-gap: 40rem
     flex-wrap: wrap
-    max-width: 1420px
+    max-width: 1420rem
     margin: auto
     width: 92%
     text-align: center
+    +media(1290)
+            justify-content: space-between
+            column-gap: 25rem
     figure
-        padding: 60px 69px 72px 69px
-        border-radius: 30px
+        padding: 40rem 30rem 52rem 30rem
+        border-radius: 30rem
         background-color: #ffffff
-        border: 1px solid #d7dbe8
+        border: 1rem solid #d7dbe8
         transition: 0.5s
+        +media(390)
+            padding: 60rem 69rem 72rem 69rem
         &:hover
-            border: 1px solid transparent
-            filter: drop-shadow(0 0 46px rgba(204,204,223,0.71))
+            border: 1rem solid transparent
+            filter: drop-shadow(0 0 46rem rgba(204,204,223,0.71))
         h4
-            margin-bottom: 11px
+            margin-bottom: 11rem
         a.buttonStart
             color: #c2c9db
-            box-shadow: inset 0px 1px 0px #e8ebf1
-            box-shadow: inset 0px -1px 0px #e8ebf1
-            border: 1px solid #d7dbe8
+            box-shadow: inset 0rem 1rem 0rem #e8ebf1
+            box-shadow: inset 0rem -1rem 0rem #e8ebf1
+            border: 1rem solid #d7dbe8
             &:hover
                 color: #fff
-                border: 1px solid transpart
+                border: 1rem solid transpart
                 background-color: #6e45e2
         b
-            font-size: 60px
-            letter-spacing: -2px
-            line-height: 72px
+            font-size: 60rem
+            letter-spacing: -2rem
+            line-height: 72rem
             color: #4f4f6f
             font-weight: 500
             position: relative
             &:before
                 content: '$'
-                font-size: 15px
+                font-size: 15rem
                 position: absolute
-                top: -15px
-                left: -7px
+                top: -15rem
+                left: -7rem
         span
-            font-size: 15px
-            letter-spacing: -1px
+            font-size: 15rem
+            letter-spacing: -1rem
             color: #4f4f6f
             font-weight: 500
         img
-            margin-bottom: 50px
+            margin-bottom: 50rem
 .descriptionFigure
-    max-width: 300px
-    margin-top: 20px
-    margin-bottom: 35px
+    max-width: 340rem
+    margin-top: 20rem
+    margin-bottom: 35rem
+    +media(390)
+        max-width: 300rem
     p
-        font-size: 16px
-        line-height: 28px
+        font-size: 16rem
+        line-height: 28rem
         color: #9fa4af
         font-weight: 400
 .title
-    font-size: 60px
-    letter-spacing: -2px
-    line-height: 72px
+    font-size: 60rem
+    letter-spacing: -2rem
+    line-height: 72rem
     color: #4f4f6f
     font-weight: 500
     text-align: center
 .bannerStart 
-    padding-top: 180px
-    padding-bottom: 205px
+    padding-top: 180rem
+    padding-bottom: 205rem
     +gradientBG("../img/Map.jpg")
     background-size: 101%
     .shortDesc:before,.shortDesc:after
@@ -235,7 +262,7 @@ ul.dark a.buttonStart
     .title
         color: #fff
     ul a.buttonStart
-        padding: 16.5px 50px
+        padding: 16.5rem 50rem
         border: none
         background-color: #fff
         color: #c2c9db
@@ -243,45 +270,46 @@ ul.dark a.buttonStart
             background-color: #6e45e2
             color: #fff
     ul.light a.buttonStart
-        padding: 16.5px 28px
+        padding: 16.5rem 28rem
 .buttons
-    padding-top: 28px
+    padding-top: 28rem
     display: flex
     justify-content: center
-    column-gap: 10px
+    column-gap: 10rem
+    row-gap: 40px
     margin: auto
     flex-wrap: wrap
 
 //footer
 footer
-    padding-top: 50px
+    padding-top: 50rem
     .logo
         display: flex
         p
             color: #000
 .footerNav 
-    padding-bottom: 30px
-    border-bottom: 2px solid rgba(189, 189, 194, .2)
+    padding-bottom: 30rem
+    border-bottom: 2rem solid rgba(189, 189, 194, .2)
 .copy
     display: flex
     justify-content: space-between
-    padding-top: 33px
-    padding-bottom: 26px
+    padding-top: 33rem
+    padding-bottom: 26rem
     p
         opacity: 0.502
-        font-size: 14px
-        line-height: 19px
+        font-size: 14rem
+        line-height: 19rem
         color: #6a6a77
         font-weight: 500
 .sociality
     ul
         display: flex
-        column-gap: 10px
+        column-gap: 10rem
 .sociality li a
     opacity: 0.35
     display: block
-    width: 20px
-    height: 20px
+    width: 20rem
+    height: 20rem
     transition: 0.5s
     &:hover
         opacity: 1
@@ -293,10 +321,10 @@ footer
         background-image: url("../img/twitter.svg")
         background-repeat: no-repeat
     &.goog
-        width: 26px
+        width: 26rem
         background-image: url("../img/google-plus-g.svg")
         background-repeat: no-repeat
-        background-size: 26px
+        background-size: 26rem
     &.inst
         background-image: url("../img/instagram.svg")
         background-repeat: no-repeat

@@ -27,21 +27,78 @@ mixin menu(menu, colorTheme="light")
                 li
                     a.buttonStart(href="#") GET STARTED
 
-mixin cards(cards)
-    .figures
-        for item in cards 
-            figure 
-                figcaption
-                    img(src=item[3], alt="asset")
-                    h4.shortDesc #{item[0]}
-                    span
-                        b #{item[1]}
-                        | /month
-                    .descriptionFigure
-                        p #{item[2]}
-                    .buttons
-                        ul.light
-                            li
-                                a.buttonStart(href="#") explore features
 
+-
+    let cardsInfo = {
+        satelite: {
+            img: "../img/asset3.png",
+            alt: "satelite",
+            personal: "personal",
+            price: 0,
+            isMonth: true,
+            description: [
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris.",
+                "Ea commodo consequat.",
+            ], // added comma here
+            btnText: "select plan",
+            href: "#",
+        },
+        mars: {
+            img: "../img/asset2.png",
+            alt: "mars",
+            personal: "personal",
+            price: 29,
+            isMonth: true,
+            description: [
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris.",
+                "Ea commodo consequat.",
+            ], // added comma here
+            btnText: "select plan",
+            href: "#",
+        },
+        rocket: {
+            img: "../img/asset1.png",
+            alt: "rocket",
+            personal: "personal",
+            price: 49,
+            isMonth: true,
+            description: [
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris.",
+                "Ea commodo consequat.",
+            ], // added comma here
+            btnText: "select plan",
+            href: "#",
+        },
+    }
+
+
+mixin cards(oneCard)
+    figure 
+        figcaption
+            img(src=oneCard.img, alt=oneCard.alt)
+            h4.shortDesc #{oneCard.personal}
+            span
+                b #{oneCard.price}
+                if oneCard.isMonth
+                    | /month
+                else 
+                    | /year
+            .descriptionFigure
+                ul
+                    for oneText in oneCard.description 
+                        li
+                            p #{oneText}
+            .buttons
+                ul.light
+                    li
+                        a.buttonStart(href=oneCard.href) #{oneCard.btnText}
 
