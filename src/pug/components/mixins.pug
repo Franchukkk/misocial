@@ -26,6 +26,8 @@ mixin menu(menu, colorTheme="light")
                         a(href=item[1]) #{item[0]}
                 li
                     a.buttonStart(href="#") GET STARTED
+        .burger#burger
+            span
 
 
 -
@@ -84,7 +86,8 @@ mixin menu(menu, colorTheme="light")
 mixin cards(oneCard)
     figure 
         figcaption
-            img(src=oneCard.img, alt=oneCard.alt)
+            .blockImg 
+                img(src=oneCard.img, alt=oneCard.alt)
             h4.shortDesc #{oneCard.personal}
             span
                 b #{oneCard.price}

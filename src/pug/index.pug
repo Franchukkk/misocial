@@ -57,3 +57,13 @@ html(lang="en")
                                 a.goog(href="#")
                             li
                                 a.inst(href="#")
+
+script.
+  const burger = document.getElementById('burger');
+  const menu = document.querySelector('ul.menu');
+  burger.addEventListener('click', function() {
+    burger.classList.toggle('active');
+  });
+  burger.addEventListener('click', function() {
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  });

@@ -8,7 +8,11 @@ html
     +media(1611)
         font-size: 1px
     +media(2200)
-        font-size: 1.59px
+        font-size: 1.5px
+
+a 
+    display: inline-block
+
 html,
 body
     scroll-behavior: smooth
@@ -25,11 +29,9 @@ li
     flex-wrap: wrap
     row-gap: 20rem
     display: flex
-    justify-content: center
+    justify-content: space-between
     column-gap: 30rem
     align-items: center
-    +media(660)
-        justify-content: space-between
 
 .logo 
     align-items: center
@@ -43,7 +45,7 @@ li
         font-size: 30rem
         letter-spacing: 6rem
         font-weight: 700
-        +media(660)
+        +media(760)
             display: none
         +media(956)
             display: block
@@ -78,14 +80,34 @@ header
         color: #ffffff
         font-weight: 400
         text-align: center
+footer
+    ul.menu
+        column-gap: 50rem
+    .burger
+        display: none
 ul.menu
     display: flex
+
     justify-content: center
-    column-gap: 30rem
+    column-gap: 10rem
     flex-wrap: wrap
     row-gap: 35rem
-    +media(790)
-        column-gap: 60rem
+    align-items: center
+    +media(760)
+        display: flex
+    @media screen and (max-width:760px)
+            width: 100%
+            text-align: center
+            position: fixed
+            border-radius: 20px
+            left: 0
+            margin-top: 40px
+            background-color: #8089da
+            border-top: 2px solid #fff
+            border-bottom: 2px solid #fff
+            z-index: 1
+            padding: 20rem 0 
+            display: none
     li
         list-style: none 
         a:not(.buttonStart)
@@ -97,9 +119,11 @@ ul.menu
 ul.light li a:not(.buttonStart)
     position: relative
     color: #fff
+    padding: 10px 20px
     &:before
         content: ''
         position: absolute
+        left: 0
         bottom: -13rem
         width: 0rem
         height: 2rem
@@ -209,12 +233,12 @@ ul.dark a.buttonStart
             margin-bottom: 11rem
         a.buttonStart
             color: #c2c9db
-            box-shadow: inset 0rem 1rem 0rem #e8ebf1
             box-shadow: inset 0rem -1rem 0rem #e8ebf1
             border: 1rem solid #d7dbe8
             &:hover
+                box-shadow: none
                 color: #fff
-                border: 1rem solid transpart
+                border: 1rem solid transparent
                 background-color: #6e45e2
         b
             font-size: 60rem
@@ -228,14 +252,18 @@ ul.dark a.buttonStart
                 font-size: 15rem
                 position: absolute
                 top: -15rem
-                left: -7rem
+                left: -10rem
         span
             font-size: 15rem
             letter-spacing: -1rem
             color: #4f4f6f
             font-weight: 500
-        img
-            margin-bottom: 50rem
+.blockImg
+    height: 110px
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 50rem
 .descriptionFigure
     max-width: 340rem
     margin-top: 20rem
@@ -331,3 +359,40 @@ footer
         background-image: url("../img/instagram.svg")
         background-repeat: no-repeat
     
+.burger 
+    position: relative
+    display: block
+    width: 30rem
+    right: 5%
+    +media(760)
+        display: none
+
+.burger span, .burger span:before, .burger span:after 
+    content: ""
+    position: absolute
+    background-color: #fff
+    width: 100%
+    height: 2px
+    transition: 0.3s
+
+.burger span:before 
+    top: -9rem
+
+.burger span:after
+    bottom: -9rem
+
+.active
+    padding: 0
+    padding-bottom: 8rem
+    span
+        background-color: transparent
+
+div.active span::before
+    top: 3rem
+    transform: rotate(45deg)
+    transition: 0.2s
+
+div.active span::after
+    bottom: -3rem
+    transform: rotate(-45deg)
+    transition: 0.2s
