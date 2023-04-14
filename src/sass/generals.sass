@@ -84,6 +84,8 @@ footer
         column-gap: 50rem
     .burger
         display: none
+    .navigation
+        justify-content: center
 ul.menu
     display: flex
     justify-content: center
@@ -320,9 +322,14 @@ footer
     border-bottom: 2rem solid rgba(189, 189, 194, .2)
 .copy
     display: flex
-    justify-content: space-between
+    justify-content: center
+    row-gap: 15rem
     padding-top: 33rem
     padding-bottom: 26rem
+    column-gap: 15rem
+    flex-wrap: wrap-reverse
+    +media(514)
+        justify-content: space-between
     p
         opacity: 0.502
         font-size: 14rem
@@ -356,8 +363,18 @@ footer
     &.inst
         background-image: url("../img/instagram.svg")
         background-repeat: no-repeat
-    
+
+.burderBor
+    position: fixed
+    right: 4%
+    border: 2px solid #798DC6
+    background-color: #798DC6
+    border-radius: 5px
+    width: 30px
+    height: 30px
 .burger 
+    top: 14px
+    left: 3px
     position: relative
     display: block
     width: 30rem
@@ -394,3 +411,7 @@ div.active span::after
     bottom: -3rem
     transform: rotate(-45deg)
     transition: 0.2s
+
+.blockImg
+    img 
+        width: 112rem
