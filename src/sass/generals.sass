@@ -86,6 +86,8 @@ footer
         display: none
     .navigation
         justify-content: center
+        +media(760)
+            justify-content: space-between
 ul.menu
     display: flex
     justify-content: center
@@ -93,7 +95,9 @@ ul.menu
     flex-wrap: wrap
     row-gap: 35rem
     align-items: center
+    overflow-y: scroll 
     +media(760)
+    overflow-y: visible 
         display: flex
     @media screen and (max-width:760px)
             width: 100%
@@ -101,13 +105,15 @@ ul.menu
             position: fixed
             border-radius: 20px
             left: 0
-            margin-top: 40px
-            background-color: #8089da
+            top: -100vw
             border-top: 2px solid #fff
             border-bottom: 2px solid #fff
+            display: block
             z-index: 1
             padding: 20rem 0 
-            display: none
+            background: linear-gradient(-60deg, rgba(135, 211, 205, 1) 0%, rgba(109, 69, 225, 1) 100%)
+            transition: 1s
+            
     li
         list-style: none 
         a:not(.buttonStart)
@@ -306,7 +312,7 @@ ul.dark a.buttonStart
     display: flex
     justify-content: center
     column-gap: 10rem
-    row-gap: 40rem
+    row-gap: 10rem
     margin: auto
     flex-wrap: wrap
 
@@ -336,6 +342,7 @@ footer
         line-height: 19rem
         color: #6a6a77
         font-weight: 500
+        text-align: center
 .sociality
     ul
         display: flex
@@ -407,15 +414,22 @@ footer
         background-color: transparent
 
 div.active span::before
-    top: 3rem
+    top: 0rem
     transform: rotate(45deg)
     transition: 0.2s
 
 div.active span::after
-    bottom: -3rem
+    bottom: 0rem
     transform: rotate(-45deg)
     transition: 0.2s
 
 .blockImg
     img 
         width: 112rem
+
+nav
+    ul.visible
+        display: block
+        top: 100px
+        +media(760)
+            display: flex
